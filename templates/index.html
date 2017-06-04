@@ -1,17 +1,105 @@
+
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
+	<title>MailMan</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="MailMan" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.4;
+	color: #1f234b;
+	background: #f5f5f5;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+header > div, main, section, footer {
+	padding: 6px;
+	max-width: 600px;
+	margin: auto;
+}
+
+header {
+	background-color: #06021B;
+	position: relative;
+	padding: 6px;
+	color: rgba(255,255,255,0.9);
+	text-shadow: 0 0 6px black;
+}
+
+h1, header p {
+  text-align: center;
+}
+
+header #background {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+header > div {
+	margin: 5em auto;
+	padding: 0;
+	position: relative;
+}
+
+h2 {
+	text-align: center;
+}
+
+
+h3 {
+  text-align: center;
+}
+
+p {
+	margin: 0 0 0.6em 0;
+}
+
+.tools {
+	margin-bottom: 10px;
+}
+
+.tools span {
+	text-transform: uppercase;
+	font-size: 0.8em;
+	border: 1px solid rgba(0,0,0,0.2);
+	padding: 4px 8px;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+
+footer {
+	text-align: center;
+	padding: 1em 0;
+	font-size: 0.8em;
+	opacity: 0.8;
+}
+</style>
 </head>
-
-
-<body>
-  <div class="info">
-      <form action="/item" method="post" id="item_form" enctype="multipart/form-data">
-        <div class="upload-container">
-          <span class="field">Or upload a file here:</span>
-          <input type="file" name="file" accept=".csv,.xls,.xlsx">
-        </div>
-        <input type="submit" name="action" value="Submit" class="button-full positive">
-      </form>
-  </div>
-
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<header>
+  <canvas id="background"></canvas>
+  <h1>MailMan</h1>
+</header>
+<body><center>
+      <div class="info">
+          <form action="/item" method="post" id="item_form" enctype="multipart/form-data">
+            <div class="upload-container">
+              <span class="field">Upload your file here:</span>
+              <input type="file" name="file" accept=".csv,.xls,.xlsx">
+            </div>
+            <input type="submit" name="action" value="Submit" class="button-full positive">
+          </form>
+      </div></center>
 </body>
+</html>

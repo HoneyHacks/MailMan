@@ -1,5 +1,6 @@
 # Sending function
 import smtplib
+import keys
 
 # Email module
 from email.mime.text import MIMEText
@@ -8,14 +9,14 @@ from email.mime.text import MIMEText
 donut = "willycheestick6@gmail.com"
 pwd = "raymondchee"
 
-def sendEmail(txt, to):
+def sendEmail(txt, to, firstname, lastname):
 
 	print("Sending email...\n")
 	smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
 	smtpserver.ehlo()
 	smtpserver.starttls()
 	smtpserver.ehlo
-	smtpserver.login(donut, pwd)
+	smtpserver.login(keys.username(), keys.password())
 
 	header = "To: " + to + "\n" + "From: " + donut
 	header = header + "\n" + "Subject: Donut Reply :-)\n"
@@ -25,5 +26,3 @@ def sendEmail(txt, to):
 	smtpserver.close()
 
 	return
-
-#sendEmail("hi", copperstick6@gmail.com)

@@ -1,6 +1,6 @@
 import xlrd
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import mailing
 
 app = Flask(__name__)
@@ -31,7 +31,9 @@ def parse_upload_form():
 @app.route('/item', methods=['POST'])
 def item():
     data = parse_upload_form()
-    print(data);
+    for i in range(len(data)):
+        print(data[i][0])
+        sendEmail()
     return(render_template('sent.html'))
 
 @app.route('/')
